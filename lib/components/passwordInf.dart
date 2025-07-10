@@ -17,13 +17,16 @@ class _PasswordinfState extends State<Passwordinf> {
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: TextField(
-        style: TextStyles.bodyTextPrimary,
-        cursorColor: AppColors.primary,
+        style: TextStyles.bodyText,
+        cursorColor: AppColors.accent,
         obscureText: _obscureText,
         decoration: InputDecoration(
           hintText: "Introduce tu contraseña",
+          hintStyle: TextStyle(
+            color: Colors.white70,
+          ),
           prefixIcon: const Icon(Icons.key),
-          prefixIconColor: AppColors.secondary,
+          prefixIconColor: AppColors.accent,
           suffixIcon: GestureDetector(
             onTap: () {
               setState(() {
@@ -32,14 +35,14 @@ class _PasswordinfState extends State<Passwordinf> {
             },
             child: Icon(
               _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: _obscureText ? AppColors.secondary : Colors.grey,
+              color: _obscureText ? AppColors.accent : AppColors.accent,
             ),
           ),
           enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: AppColors.secondary),
+            borderSide: BorderSide(color: Colors.white70),
           ),
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: AppColors.primary, width: 2),
+            borderSide: BorderSide(color: AppColors.accent, width: 2),
           ),
         ),
       ),

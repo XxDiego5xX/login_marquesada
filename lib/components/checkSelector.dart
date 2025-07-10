@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_marquesada/core/app_colors.dart';
+import 'package:login_marquesada/core/text_style.dart';
 
 class Checkselector extends StatefulWidget {
   const Checkselector({super.key});
@@ -23,10 +24,19 @@ class _CheckselectorState extends State<Checkselector> {
               check = newCheck!;
             });
           },
-          activeColor: AppColors.primary,
-          checkColor: AppColors.accent,
+          activeColor: AppColors.accent,
+          checkColor: AppColors.primary,
+          fillColor: MaterialStateProperty.resolveWith<Color>(
+                (Set<MaterialState> states) {
+              if (states.contains(MaterialState.selected)) {
+                return AppColors.accent;
+              }
+              return Colors.white;
+            },
+          ),
         ),
-        const Text("Recordar sesión", style: TextStyle(fontSize: 15 ),),
+
+        const Text("Recordar sesión", style: TextStyles.bodyText),
       ],
     );
   }

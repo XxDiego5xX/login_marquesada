@@ -29,8 +29,9 @@ class _ButtonsselectorState extends State<Buttonsselector> {
               decoration: BoxDecoration(
                 color: selectedButton == "entrar"
                     ? AppColors.primaryvar
-                    : AppColors.primary,
+                    : AppColors.accent,
                 borderRadius: BorderRadius.circular(10),
+                border: Border.all(color:  Colors.white30, width: 1),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -41,7 +42,7 @@ class _ButtonsselectorState extends State<Buttonsselector> {
                         ? TextStyles
                               .bodyText // Texto blanco
                         : TextStyles.bodyText.copyWith(
-                            color: AppColors.accent,
+                            color: AppColors.primary,
                           ), // Texto color cuando no activo
                   ),
                 ),
@@ -62,21 +63,23 @@ class _ButtonsselectorState extends State<Buttonsselector> {
               decoration: BoxDecoration(
                 color: selectedButton == "acceder"
                     ? AppColors.primaryvar
-                    : AppColors.accent,
+                    : AppColors.primary,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppColors.primary, width: 1),
+                border: Border.all(color: Colors.white54, width: 1),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.all(4),
                 child: Center(
                   child: Text(
                     "Acceder sin cuenta",
+                    textAlign: TextAlign.center,
                     style: selectedButton == "acceder"
                         ? TextStyles.bodyText
                         : TextStyles.bodyText.copyWith(
-                            color: AppColors.primary,
-                          ),
+                      color: AppColors.accent,
+                    ),
                   ),
+
                 ),
               ),
             ),

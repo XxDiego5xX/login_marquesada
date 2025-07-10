@@ -15,21 +15,37 @@ class _UserselectorState extends State<Userselector> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(30),
-          child: TextField(
-            style: TextStyles.bodyTextPrimary,
-            cursorColor: AppColors.primary,
-            decoration: InputDecoration(
-              hintText: "Introduce tu email",
-              prefixIcon: Icon(Icons.person),
-              prefixIconColor: AppColors.secondary,
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: AppColors.secondary),
+          padding: const EdgeInsets.only(top: 5, right: 30, left: 30, bottom: 30),
+          // padding: const EdgeInsets.all(30),
+          child: Column(
+            children: [
+              //Texto
+              Text("¡Bienvenido!", style: TextStyles.bodyTextTitle),
+              SizedBox(height: 5),
+              Text(
+                "Entra y descubre lo que tenemos para ti ",
+                style: TextStyles.bodyText,
               ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary, width: 2),
+              SizedBox(height: 50),
+              TextField(
+                style: TextStyles.bodyText,
+                cursorColor: AppColors.accent,
+                decoration: InputDecoration(
+                  hintText: "Introduce tu email",
+                  hintStyle: TextStyle(
+                    color: Colors.white70,
+                  ),
+                  prefixIcon: Icon(Icons.person),
+                  prefixIconColor: AppColors.accent,
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white70),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.accent, width: 2),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ],
