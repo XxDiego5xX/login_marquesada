@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.white,
+        //   foregroundColor: Colors.black,
+        // ),
         body: login(),
       ),
     );

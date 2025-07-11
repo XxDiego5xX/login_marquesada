@@ -21,7 +21,7 @@ class login extends StatelessWidget {
         // Cuadro azul redondeado
         Container(
           decoration: const BoxDecoration(
-            color: Colors.black, // Color azul
+            color: AppColors.secondary, // Color azul
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
             ),
@@ -42,7 +42,7 @@ class login extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.only(right: 10, bottom: 30, top: 30),
+                  padding: EdgeInsets.only(right: 10, bottom: 50, top: 80),
                   child: Text(
                     "Versión 3.7.1",
                     style: TextStyle(color: AppColors.accent),
