@@ -10,42 +10,63 @@ class Passwordinf extends StatefulWidget {
 }
 
 class _PasswordinfState extends State<Passwordinf> {
-  bool _obscureText = true; // Contraseña oculta
+  bool _obscureText = true; // Estado para mostrar/ocultar contraseña
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: TextField(
-        style: TextStyles.bodyText,
-        cursorColor: AppColors.accent,
-        obscureText: _obscureText,
-        decoration: InputDecoration(
-          hintText: "Introduce tu contraseña",
-          hintStyle: TextStyle(
-            color: Colors.white70,
-          ),
-          prefixIcon: const Icon(Icons.key),
-          prefixIconColor: AppColors.accent,
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-            child: Icon(
-              _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: _obscureText ? AppColors.accent : AppColors.accent,
-            ),
-          ),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white70),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: AppColors.accent, width: 2),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 30, left: 30, top: 10, bottom: 10),
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Contraseña", style: TextStyles.bodyText),
+                ],
+              ),
+              const SizedBox(height: 5),
+              TextField(
+                style: TextStyles.bodyText,
+                cursorColor: AppColors.accent,
+                obscureText: _obscureText,
+                decoration: InputDecoration(
+                  hintText: "Introduce tu contraseña",
+                  hintStyle: const TextStyle(color: Colors.white70),
+                  prefixIcon: const Icon(Icons.key),
+                  prefixIconColor: AppColors.accent,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
+                    child: Icon(
+                      _obscureText ? Icons.visibility : Icons.visibility_off,
+                      color: AppColors.accent,
+                    ),
+                  ),
+
+                  // Bordes
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white70, width: 1.5),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.accent, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white38, width: 1.5),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-      ),
+      ],
     );
   }
 }

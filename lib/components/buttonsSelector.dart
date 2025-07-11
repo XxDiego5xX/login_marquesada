@@ -10,7 +10,7 @@ class Buttonsselector extends StatefulWidget {
 }
 
 class _ButtonsselectorState extends State<Buttonsselector> {
-  String? selectedButton; // Controla cuál botón está activo
+  String? selectedButton;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +24,14 @@ class _ButtonsselectorState extends State<Buttonsselector> {
             });
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 110, vertical: 10),
             child: Container(
               decoration: BoxDecoration(
                 color: selectedButton == "entrar"
-                    ? AppColors.primaryvar
-                    : AppColors.accent,
+                    ? AppColors.accent
+                    : AppColors.secondary,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color:  Colors.white30, width: 1),
+                border: Border.all(color:  Colors.white60, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -40,16 +40,17 @@ class _ButtonsselectorState extends State<Buttonsselector> {
                     "Entrar",
                     style: selectedButton == "entrar"
                         ? TextStyles
-                              .bodyText // Texto blanco
+                              .bodyTextBlack
                         : TextStyles.bodyText.copyWith(
-                            color: AppColors.primary,
-                          ), // Texto color cuando no activo
+                            color: AppColors.accent,
+                          ),
                   ),
                 ),
               ),
             ),
           ),
         ),
+
         // Botón: Acceder sin cuenta
         GestureDetector(
           onTap: () {
@@ -58,14 +59,14 @@ class _ButtonsselectorState extends State<Buttonsselector> {
             });
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 110, vertical: 10),
             child: Container(
               decoration: BoxDecoration(
                 color: selectedButton == "acceder"
-                    ? AppColors.primaryvar
-                    : AppColors.primary,
+                    ? AppColors.accent
+                    : AppColors.secondary,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.white54, width: 1),
+                border: Border.all(color: Colors.white60, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(4),
@@ -74,7 +75,8 @@ class _ButtonsselectorState extends State<Buttonsselector> {
                     "Acceder sin cuenta",
                     textAlign: TextAlign.center,
                     style: selectedButton == "acceder"
-                        ? TextStyles.bodyText
+                        ? TextStyles
+                        .bodyTextBlack
                         : TextStyles.bodyText.copyWith(
                       color: AppColors.accent,
                     ),

@@ -15,33 +15,41 @@ class _UserselectorState extends State<Userselector> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 5, right: 30, left: 30, bottom: 30),
+          padding: const EdgeInsets.only(right: 30, left: 30),
           // padding: const EdgeInsets.all(30),
           child: Column(
             children: [
-              //Texto
-              Text("¡Bienvenido!", style: TextStyles.bodyTextTitle),
-              SizedBox(height: 5),
-              Text(
-                "Entra y descubre lo que tenemos para ti ",
-                style: TextStyles.bodyText,
-              ),
               SizedBox(height: 50),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text("Usuario", style: TextStyles.bodyText)],
+              ),
+              SizedBox(height: 5),
               TextField(
                 style: TextStyles.bodyText,
                 cursorColor: AppColors.accent,
                 decoration: InputDecoration(
                   hintText: "Introduce tu email",
-                  hintStyle: TextStyle(
-                    color: Colors.white70,
-                  ),
+                  hintStyle: TextStyle(color: Colors.white70),
                   prefixIcon: Icon(Icons.person),
                   prefixIconColor: AppColors.accent,
-                  enabledBorder: UnderlineInputBorder(
+
+                  // Borde cuando el campo está habilitado pero no enfocado
+                  enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white70),
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  focusedBorder: UnderlineInputBorder(
+
+                  // Borde enfocado
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: AppColors.accent, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+
+                  // Borde predeterminado
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white70),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_marquesada/components/WelcomeMessage.dart';
 import '../components/buttonsSelector.dart';
 import '../components/checkSelector.dart';
 import '../components/logoInf.dart';
@@ -20,7 +21,7 @@ class login extends StatelessWidget {
         // Cuadro azul redondeado
         Container(
           decoration: const BoxDecoration(
-            color: Color(0xFF0063DA), // Color azul
+            color: Colors.black, // Color azul
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
             ),
@@ -29,6 +30,7 @@ class login extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
+              Welcomemessage(),
               Userselector(),
               SizedBox(height: 10),
               Passwordinf(),

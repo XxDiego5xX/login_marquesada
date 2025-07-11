@@ -9,7 +9,7 @@ class Logoinf extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(height: 20), // Espaciado
-        Image.asset("assets/images/logo_marquesada_hd.png", width: 300),
+        Image.asset("assets/images/logo_marquesada_hd_bn.png", width: 300),
         SizedBox(height: 30), // Espaciado
       ],
     );

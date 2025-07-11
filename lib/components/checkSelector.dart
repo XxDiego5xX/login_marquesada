@@ -25,7 +25,7 @@ class _CheckselectorState extends State<Checkselector> {
             });
           },
           activeColor: AppColors.accent,
-          checkColor: AppColors.primary,
+          checkColor: AppColors.secondary,
           fillColor: MaterialStateProperty.resolveWith<Color>(
                 (Set<MaterialState> states) {
               if (states.contains(MaterialState.selected)) {
