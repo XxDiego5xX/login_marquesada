@@ -7,8 +7,6 @@ import '../components/passwordInf.dart';
 import '../components/userSelector.dart';
 import '../core/app_colors.dart';
 
-//04:40:40 video flutter curso
-
 class login extends StatelessWidget {
   const login({super.key});
 
@@ -16,36 +14,34 @@ class login extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const Logoinf(),
-
-        // Cuadro azul redondeado
         Container(
           decoration: const BoxDecoration(
-            color: AppColors.secondary, // Color azul
+            color: AppColors.accent, // Color azul
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40),
+              topRight: Radius.circular(40),
             ),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
+              const Logoinf(),
+              SizedBox(height: 15),
               Welcomemessage(),
               Userselector(),
               SizedBox(height: 10),
               Passwordinf(),
-              SizedBox(height: 10),
               Checkselector(),
-              SizedBox(height: 10),
+              SizedBox(height: 40),
               Buttonsselector(),
-              SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.only(right: 10, bottom: 50, top: 80),
+                  padding: EdgeInsets.only(right: 10, bottom: 50, top: 70),
                   child: Text(
                     "Versión 3.7.1",
-                    style: TextStyle(color: AppColors.accent),
+                    style: TextStyle(color: AppColors.secondary),
                   ),
                 ),
               ),

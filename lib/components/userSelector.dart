@@ -22,33 +22,43 @@ class _UserselectorState extends State<Userselector> {
               SizedBox(height: 50),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text("Usuario", style: TextStyles.bodyText)],
+                children: [Text("Usuario", style: TextStyles.bodyTextPrimary)],
               ),
               SizedBox(height: 5),
               TextField(
-                style: TextStyles.bodyText,
-                cursorColor: AppColors.accent,
+                style: TextStyles.bodyTextPrimary,
+                cursorColor: AppColors.primary,
+
                 decoration: InputDecoration(
+                  filled: true,
+                  // Activa el fondo
+                  fillColor: Colors.lightBlue[50],
+                  // Color de fondo
+                  // fillColor: Colors.lightBlue[50], // Color de fondo
                   hintText: "Introduce tu email",
-                  hintStyle: TextStyle(color: Colors.white70),
+                  hintStyle: TextStyle(color: AppColors.primary),
                   prefixIcon: Icon(Icons.person),
-                  prefixIconColor: AppColors.accent,
+                  prefixIconColor: AppColors.secondary,
 
-                  // Borde cuando el campo está habilitado pero no enfocado
+                  // Bordes
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
+                    borderSide: const BorderSide(
+                      color: AppColors.backgroundComponent,
+                      width: 1.5,
+                    ),
                     borderRadius: BorderRadius.circular(8),
                   ),
 
-                  // Borde enfocado
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.accent, width: 2),
+                    borderSide: BorderSide(color: Colors.lightBlue, width: 2),
                     borderRadius: BorderRadius.circular(8),
                   ),
 
-                  // Borde predeterminado
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
+                  disabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: AppColors.primary,
+                      width: 1.5,
+                    ),
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),

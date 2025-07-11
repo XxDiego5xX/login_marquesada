@@ -10,14 +10,15 @@ class Welcomemessage extends StatelessWidget {
     return Column(
       children: [
         //Texto
-
-        Center(child: Text("¡Bienvenido!", style: TextStyles.bodyTextTitle)),
+        Center(
+          child: Text("¡Bienvenido!", style: TextStyles.bodyTextTitlePrimary),
+        ),
         SizedBox(height: 5),
         Text(
           "Entra y descubre lo que tenemos para ti ",
-          style: TextStyles.bodyText,
+          style: TextStyle(color: Color(0xFF0055C2), fontSize: 16),
         ),
-      ]
+      ],
     );
   }
 }

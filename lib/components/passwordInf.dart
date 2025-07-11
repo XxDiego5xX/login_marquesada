@@ -17,25 +17,34 @@ class _PasswordinfState extends State<Passwordinf> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 30, left: 30, top: 10, bottom: 10),
+          padding: const EdgeInsets.only(
+            right: 30,
+            left: 30,
+            top: 10,
+            bottom: 10,
+          ),
           child: Column(
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Contraseña", style: TextStyles.bodyText),
+                  Text("Contraseña", style: TextStyles.bodyTextPrimary),
                 ],
               ),
               const SizedBox(height: 5),
               TextField(
-                style: TextStyles.bodyText,
-                cursorColor: AppColors.accent,
+                style: TextStyles.bodyTextPrimary,
+                cursorColor: AppColors.primary,
                 obscureText: _obscureText,
                 decoration: InputDecoration(
+                  filled: true,
+                  // Activa el fondo
+                  fillColor: Colors.lightBlue[50],
+                  // Color de fondo
                   hintText: "Introduce tu contraseña",
-                  hintStyle: const TextStyle(color: Colors.white70),
+                  hintStyle: TextStyle(color: AppColors.primary),
                   prefixIcon: const Icon(Icons.key),
-                  prefixIconColor: AppColors.accent,
+                  prefixIconColor: AppColors.secondary,
                   suffixIcon: GestureDetector(
                     onTap: () {
                       setState(() {
@@ -44,21 +53,29 @@ class _PasswordinfState extends State<Passwordinf> {
                     },
                     child: Icon(
                       _obscureText ? Icons.visibility : Icons.visibility_off,
-                      color: AppColors.accent,
+                      color: AppColors.secondary,
                     ),
                   ),
 
                   // Bordes
                   enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white70, width: 1.5),
+                    borderSide: const BorderSide(
+                      color: AppColors.backgroundComponent,
+                      width: 1.5,
+                    ),
                     borderRadius: BorderRadius.circular(8),
                   ),
+
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.accent, width: 2),
+                    borderSide: BorderSide(color: Colors.lightBlue, width: 2),
                     borderRadius: BorderRadius.circular(8),
                   ),
+
                   disabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white38, width: 1.5),
+                    borderSide: const BorderSide(
+                      color: AppColors.primary,
+                      width: 1.5,
+                    ),
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),

@@ -25,18 +25,18 @@ class _CheckselectorState extends State<Checkselector> {
             });
           },
           activeColor: AppColors.accent,
-          checkColor: AppColors.secondary,
-          fillColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
-                return AppColors.accent;
-              }
-              return Colors.white;
-            },
-          ),
+          checkColor: AppColors.accent,
+          fillColor: MaterialStateProperty.resolveWith<Color>((
+            Set<MaterialState> states,
+          ) {
+            if (states.contains(MaterialState.selected)) {
+              return AppColors.primary;
+            }
+            return Colors.white;
+          }),
         ),
 
-        const Text("Recordar sesión", style: TextStyles.bodyText),
+        const Text("Recordar sesión", style: TextStyles.bodyTextPrimary),
       ],
     );
   }
